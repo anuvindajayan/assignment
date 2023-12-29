@@ -2,9 +2,9 @@ import 'package:assignment/shared_preference/shared_login.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 void main() {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false,
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: SharedSign(),
   ));
 }
@@ -88,7 +88,9 @@ class SharedSignState extends State {
                           borderRadius: BorderRadius.circular(20))),
                 ),
               ),
-              ElevatedButton(style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.blue)),
+              ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(Colors.blue)),
                   onPressed: () {
                     Store_data();
                   },
@@ -118,7 +120,8 @@ class SharedSignState extends State {
       preferences.setString("emailid", email);
       preferences.setString("pass", password);
       preferences.setString("cpass", confirmpassword);
-      Navigator.push(context, MaterialPageRoute(builder: (context) => SharedLogin()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => SharedLogin()));
     }
   }
 }
